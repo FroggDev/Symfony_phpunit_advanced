@@ -1,0 +1,8 @@
+create a contact entity with
+
+id
+name
+firstname
+email
+phone
+

@@ -1,0 +1,3 @@
+# Custom ignore list from .git/config
+# [core]
+#	exludesfile = ~/.myignorelist

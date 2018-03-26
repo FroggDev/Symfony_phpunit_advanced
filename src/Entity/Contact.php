@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ContactRepository")
@@ -18,22 +19,26 @@ class Contact
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $firstname;
 
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $email;
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $phone;
 
@@ -47,7 +52,7 @@ class Contact
     /**
      * @return string
      */
-    public function getFirstname(): string
+    public function getFirstname(): ?string
     {
         return $this->firstname;
     }
@@ -65,7 +70,7 @@ class Contact
     /**
      * @return string
      */
-    public function getLastname(): string
+    public function getLastname(): ?string
     {
         return $this->lastname;
     }
@@ -101,7 +106,7 @@ class Contact
     /**
      * @return string
      */
-    public function getPhone(): string
+    public function getPhone(): ?string
     {
         return $this->phone;
     }

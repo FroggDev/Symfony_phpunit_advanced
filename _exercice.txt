@@ -1,8 +1,33 @@
-create a contact entity with
-
+> create a contact entity with
 id
 name
 firstname
 email
 phone
 
+> create an exporter
+php bin/console server:run
+
+composer require symfony/serializer
+composer require symfony/property-access
+
+php bin/console debug:container
+By default, only public services are shown, but you can also view private services:
+
+php bin/console debug:container --show-private
+To see a list of all of the available types that can be used for autowiring, run:
+
+php bin/console debug:autowiring
+
+php bin/console debug:container Symfony\Component\Serializer\SerializerInterface
+
+# GET CONFIG FILE
+php bin/console debug:config framework serializer
+
+
+TEST FONCTIONNELS
+------------------
+https://symfony.com/doc/current/components/browser_kit.html
+https://symfony.com/doc/current/components/css_selector.html
+composer require symfony/browser-kit --dev
+composer require symfony/css-selector

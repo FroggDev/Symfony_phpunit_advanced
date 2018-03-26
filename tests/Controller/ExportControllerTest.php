@@ -25,6 +25,31 @@ class ExportControllerTest extends WebTestCase
         );
     }
 
+    public function testAllRoutes()
+    {
+        $client = static::createclient();
+
+        $client->request('GET', '/');
+
+        $router = $client->getContainer()->get('router');
+
+        $routesCollection = $router->getRouteCollection();
+
+        foreach ($routesCollection as $route) {
+            $tokens = $route->compile()->getTokens();
+
+            foreach ($tokens as $token) {
+                if ('text' === $token[0]) {
+                    $path = $token[1];
+                }
+            }
+
+            $client->request('GET', $path);
+
+            $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        }
+    }
+
     /**
      * Will be excecuted once
      */

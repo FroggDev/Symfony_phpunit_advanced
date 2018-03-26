@@ -47,7 +47,6 @@ class ExportController extends AbstractController
             $eManager->persist($form->getData());
             $eManager->flush();
 
-
             $this->addFlash("success" , "Saved !" );
 
             # redirect on the created article

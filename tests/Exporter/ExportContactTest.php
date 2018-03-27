@@ -36,6 +36,8 @@ class ExportContactTest extends TestCase
     static public function setUpBeforeClass()
     {
         self::$contacts = include __DIR__ . '/../Data/contacts.php';
+
+        echo "\n[ TESTING ".__CLASS__." ]\n";
     }
 
     /**

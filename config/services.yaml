@@ -28,8 +28,6 @@ services:
     # please note that last definitions always *replace* previous ones
 
 
-
-
     App\Serializer\YamlEncoder:
         tags: ['serializer.encoder']
 

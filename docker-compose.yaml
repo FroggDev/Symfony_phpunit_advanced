@@ -1,0 +1,40 @@
+# Start in background
+#docker-compose up -d
+# Go to docker bash command
+#docker exec -it ID bash
+# stop the docker
+#docker-compose down
+version: '3'
+services:
+    #php:
+    #    image: php:7.2
+    #    volumes: 
+    #        - C:\Users\Etudiant\Desktop\Symfony_phpunit_advanced:/opt/web
+    #    # . pour le répertoire courrant
+    #    #volumes: 
+    #    #    - .:/opt/web
+    #    command: php -S 0.0.0.0:8000 -t /opt/web/public
+    #    ports:
+    #        - "8000:8000"
+            
+    php:
+        build: docker
+        image: webforce/php:7.2-fpm
+        volumes: 
+            - C:\Users\Etudiant\Desktop\Symfony_phpunit_advanced:/opt/web
+        command: php -S 0.0.0.0:8000 -t /opt/web/public
+        ports:
+            - "8000:8000"        
+            
+    # can be use as domain name to reach it
+    database:
+        image: mysql:5.7
+        #Volume must be in first else not create folder
+        volumes:
+            - C:\Users\Etudiant\Desktop\Symfony_phpunit_advanced\var\mysql.db:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+
+            
+
+        

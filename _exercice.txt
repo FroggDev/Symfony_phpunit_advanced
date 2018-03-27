@@ -24,6 +24,8 @@ php bin/console debug:container Symfony\Component\Serializer\SerializerInterface
 # GET CONFIG FILE
 php bin/console debug:config framework serializer
 
+# get coverage
+php bin\phpunit --coverage-html public/output/
 
 TEST FONCTIONNELS
 ------------------

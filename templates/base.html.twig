@@ -8,7 +8,7 @@
     <body>
 
         {% for message in app.flashes('success') %}
-            {{ message }}
+            <div class="success">{{ message }}</div>
         {% endfor %}
 
         {% block body %}{% endblock %}

@@ -28,6 +28,7 @@ class ExportController extends AbstractController
 
 
     /**
+     * @Route ("/",name="index")
      * @Route("/contact/create.{_format}", name="contact_create",defaults={"_format"="html"},requirements={"_format"="html"}))
      */
     public function contactCreate(Request $request)

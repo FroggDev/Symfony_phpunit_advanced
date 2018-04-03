@@ -33,3 +33,16 @@ https://symfony.com/doc/current/components/browser_kit.html
 https://symfony.com/doc/current/components/css_selector.html
 composer require symfony/browser-kit --dev
 composer require symfony/css-selector
+
+
+BEHAT ==>
+composer require --dev behat/mink "dev-master"
+composer require --dev behat/mink-browserkit-driver "dev-master"
+composer require --dev behat/mink-goutte-driver 
+composer require --dev behat/mink-extension 
+composer require --dev behat/mink-selenium2-driver
+
+vendor\bin\behat.bat --init
+
+composer require --dev behat/symfony2-extension
+
